@@ -30,6 +30,8 @@ public class HomeActivity extends Activity implements View.OnClickListener {
                 break;
             case R.id.tenbytenButton:
                 Log.e("Button Click", "Launch TenByTenActivity");
+                Intent tenByTenIntent = new Intent(this, TenByTenActivity.class);
+                this.startActivity(tenByTenIntent);
                 break;
             case R.id.announcementsButton:
                 Log.e("Button Click", "Launch AnnouncementsActivity");
@@ -38,6 +40,8 @@ public class HomeActivity extends Activity implements View.OnClickListener {
                 break;
             case R.id.eventsButton:
                 Log.e("Button Click", "Launch EventsActivity");
+                Intent eventsIntent = new Intent(this, EventsActivity.class);
+                this.startActivity(eventsIntent);
                 break;
         }
     }

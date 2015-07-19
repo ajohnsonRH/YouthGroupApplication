@@ -17,5 +17,8 @@
         blandit consectetur enim. Vivamus volutpat, nisl sed dapibus egestas.</string>
     <string name="title_activity_announcements">Announcements</string>
     <string name="hello_world">Hello world!</string>
+    <string name="title_activity_events">EventsActivity</string>
+    <string name="title_activity_ten_by_ten">TenByTenActivity</string>
+    <string name="daily_reading_title">Daily Scripture Reading:</string>
 
 </resources>

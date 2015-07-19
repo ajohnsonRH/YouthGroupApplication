@@ -23,6 +23,14 @@
             android:name=".AnnouncementsActivity"
             android:label="@string/title_activity_announcements" >
         </activity>
+        <activity
+            android:name=".EventsActivity"
+            android:label="@string/title_activity_events" >
+        </activity>
+        <activity
+            android:name=".TenByTenActivity"
+            android:label="@string/title_activity_ten_by_ten" >
+        </activity>
     </application>
 
 </manifest>
