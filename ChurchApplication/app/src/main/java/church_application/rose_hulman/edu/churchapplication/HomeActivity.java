@@ -1,6 +1,7 @@
 package church_application.rose_hulman.edu.churchapplication;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.*;
@@ -24,6 +25,8 @@ public class HomeActivity extends Activity implements View.OnClickListener {
         switch (v.getId()) {
             case R.id.aboutUsButton:
                 Log.e("Button Click", "Launch AboutUsActivity");
+                Intent aboutIntent = new Intent(this, AboutUsActivity.class);
+                this.startActivity(aboutIntent);
                 break;
             case R.id.tenbytenButton:
                 Log.e("Button Click", "Launch TenByTenActivity");
