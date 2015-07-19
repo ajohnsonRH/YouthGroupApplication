@@ -26,12 +26,12 @@
             <ImageButton
                 android:id="@+id/tenbytenButton"
                 android:padding="50dp"
-                android:background="@drawable/ic_launcher">Ten by Ten</ImageButton>
+                android:background="@android:drawable/btn_plus">Ten by Ten</ImageButton>
 
             <ImageButton
                 android:id="@+id/eventsButton"
                 android:padding="50dp"
-                android:background="@drawable/ic_launcher">Events
+                android:background="@android:drawable/ic_menu_agenda">Events
             </ImageButton>
         </TableRow>
 
@@ -42,13 +42,13 @@
 
             <ImageButton
                 android:id="@+id/announcementsButton"
-                android:background="@drawable/ic_launcher"
+                android:background="@android:drawable/ic_menu_day"
                 android:padding="50dp">Announcements</ImageButton>
 
             <ImageButton
                 android:id="@+id/aboutUsButton"
                 android:padding="50dp"
-                android:background="@drawable/ic_launcher">About Us
+                android:background="@android:drawable/ic_menu_myplaces">About Us
             </ImageButton>
         </TableRow>
     </TableLayout>

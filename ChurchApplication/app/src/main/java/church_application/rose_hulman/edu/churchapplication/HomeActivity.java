@@ -33,6 +33,8 @@ public class HomeActivity extends Activity implements View.OnClickListener {
                 break;
             case R.id.announcementsButton:
                 Log.e("Button Click", "Launch AnnouncementsActivity");
+                Intent announcementsIntent = new Intent(this, AnnouncementsActivity.class);
+                this.startActivity(announcementsIntent);
                 break;
             case R.id.eventsButton:
                 Log.e("Button Click", "Launch EventsActivity");

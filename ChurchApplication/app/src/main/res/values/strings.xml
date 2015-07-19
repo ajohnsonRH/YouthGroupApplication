@@ -15,7 +15,7 @@
     <string name="how_to_connect_title_text">How To Connect</string>
     <string name="how_to_connect_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pharetra non nibh ut gravida. Pellentesque felis velit, pharetra vitae erat id,
         blandit consectetur enim. Vivamus volutpat, nisl sed dapibus egestas.</string>
-    <string name="title_activity_announcements">AnnouncementsActivity</string>
+    <string name="title_activity_announcements">Announcements</string>
     <string name="hello_world">Hello world!</string>
 
 </resources>
