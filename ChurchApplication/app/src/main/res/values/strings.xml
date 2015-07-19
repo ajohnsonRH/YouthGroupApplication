@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Youth Group</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_about_us">AboutUsActivity</string>
+
+    <string name="about_us_paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pharetra non nibh ut gravida. Pellentesque felis velit, pharetra vitae erat id,
+        blandit consectetur enim. Vivamus volutpat, nisl sed dapibus egestas, ex ligula convallis arcu, quis hendrerit magna ipsum at lorem. Donec rutrum tristique tempor.</string>
+    <string name="aboutUsTitle">Who We Are</string>
+    <string name="pastorRyan">Pastor Ryan</string>
+    <string name="pastorMichelle">Pastor Michelle</string>
+
+</resources>
