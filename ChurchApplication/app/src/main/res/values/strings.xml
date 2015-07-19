@@ -6,9 +6,14 @@
     <string name="title_activity_about_us">AboutUsActivity</string>
 
     <string name="about_us_paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pharetra non nibh ut gravida. Pellentesque felis velit, pharetra vitae erat id,
-        blandit consectetur enim. Vivamus volutpat, nisl sed dapibus egestas, ex ligula convallis arcu, quis hendrerit magna ipsum at lorem. Donec rutrum tristique tempor.</string>
+        blandit consectetur enim. Vivamus volutpat, nisl sed dapibus egestas.</string>
     <string name="aboutUsTitle">Who We Are</string>
     <string name="pastorRyan">Pastor Ryan</string>
     <string name="pastorMichelle">Pastor Michelle</string>
-
+    <string name="what_we_believe_paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pharetra non nibh ut gravida. Pellentesque felis velit, pharetra vitae erat id,
+        blandit consectetur enim. Vivamus volutpat, nisl sed dapibus egestas.</string>
+    <string name="what_we_believe_title_text">What We Believe</string>
+    <string name="how_to_connect_title_text">How To Connect</string>
+    <string name="how_to_connect_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pharetra non nibh ut gravida. Pellentesque felis velit, pharetra vitae erat id,
+        blandit consectetur enim. Vivamus volutpat, nisl sed dapibus egestas.</string>
 </resources>

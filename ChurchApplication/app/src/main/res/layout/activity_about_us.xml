@@ -24,6 +24,7 @@
         android:padding="20dp" />
 
     <TableLayout
+        android:id="@+id/contact_table"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/about_us">
@@ -34,7 +35,7 @@
 
             <TextView android:text="@string/pastorRyan" android:padding="10dp"/>
 
-            <ImageButton android:background="@android:drawable/sym_action_email" />
+            <ImageButton android:background="@android:drawable/sym_action_email" android:id="@+id/contact_Pastor_Ryan_Button"/>
         </TableRow>
 
         <TableRow>
@@ -43,15 +44,46 @@
 
             <TextView android:text="@string/pastorMichelle" android:padding="10dp" />
 
-            <ImageButton android:background="@android:drawable/sym_action_email" />
+            <ImageButton android:background="@android:drawable/sym_action_email" android:id="@+id/contact_Pastor_Michelle_Button"/>
         </TableRow>
     </TableLayout>
+    <TextView
+        android:id="@+id/what_we_believe_title"
+        android:layout_below="@+id/contact_table"
+        android:text="@string/what_we_believe_title_text"
+        android:textSize="25sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/what_we_believe_paragraph"
+        android:text="@string/what_we_believe_paragraph"
+        android:layout_below="@id/what_we_believe_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="20dp" />
+    <TextView
+        android:id="@+id/how_to_connect_title"
+        android:layout_below="@+id/what_we_believe_paragraph"
+        android:text="@string/how_to_connect_title_text"
+        android:textSize="25sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/how_to_connect_paragraph"
+        android:text="@string/how_to_connect_text"
+        android:layout_below="@id/how_to_connect_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="20dp" />
     <!---->
     <!--<ImageView-->
     <!--android:id="@+id/about_us_image"-->
     <!--android:layout_width="wrap_content"-->
     <!--android:layout_height="wrap_content"-->
     <!--android:background="@drawable/youth_group"/>-->
+
 
 
 </RelativeLayout>
