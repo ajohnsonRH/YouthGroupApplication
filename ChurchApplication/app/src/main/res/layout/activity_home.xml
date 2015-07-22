@@ -2,6 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/grey"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
@@ -9,47 +10,59 @@
     tools:context=".HomeActivity">
 
     <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:id="@+id/groupPic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/youth_group" />
 
     <TableLayout
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/groupPic">
 
         <TableRow
             android:id="@+id/menu_row_1"
-            android:padding="20dp"
+            android:layout_marginTop="45dp"
             android:layout_centerHorizontal="true">
 
             <ImageButton
                 android:id="@+id/tenbytenButton"
-                android:padding="50dp"
-                android:background="@android:drawable/btn_plus">Ten by Ten</ImageButton>
+                android:background="@drawable/bible"
+                android:layout_height="75dp"
+                android:layout_width="75dp"
+                android:layout_marginRight="75dp">Ten by Ten</ImageButton>
 
             <ImageButton
                 android:id="@+id/eventsButton"
-                android:padding="50dp"
-                android:background="@android:drawable/ic_menu_agenda">Events
+                android:background="@drawable/calendar"
+                android:layout_width="75dp"
+                android:layout_height="75dp">Events
             </ImageButton>
+
         </TableRow>
 
         <TableRow
             android:id="@+id/menu_row_2"
-            android:padding="20dp"
+            android:layout_marginTop="30dp"
             android:layout_centerHorizontal="true">
 
             <ImageButton
                 android:id="@+id/announcementsButton"
-                android:background="@android:drawable/ic_menu_day"
-                android:padding="50dp">Announcements</ImageButton>
+                android:background="@drawable/megaphone"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:layout_marginRight="75dp">Announcements</ImageButton>
 
             <ImageButton
                 android:id="@+id/aboutUsButton"
-                android:padding="50dp"
-                android:background="@android:drawable/ic_menu_myplaces">About Us
+                android:background="@drawable/unhindered_logo"
+                android:layout_width="75dp"
+                android:layout_height="75dp">About Us
             </ImageButton>
+
         </TableRow>
     </TableLayout>
 
