@@ -2,6 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/sky_blue"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
@@ -9,47 +10,127 @@
     tools:context=".HomeActivity">
 
     <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:id="@+id/groupPic"
+        android:layout_width="fill_parent"
+        android:layout_height="200dp"
+        android:scaleType="fitXY"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/youth_group"
+        android:background="@drawable/my_border"
+        android:padding="5dp"/>
 
     <TableLayout
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/groupPic"
+        android:scaleType="fitXY">
 
         <TableRow
             android:id="@+id/menu_row_1"
-            android:padding="20dp"
+            android:layout_marginTop="30dp"
             android:layout_centerHorizontal="true">
 
             <ImageButton
                 android:id="@+id/tenbytenButton"
-                android:padding="50dp"
-                android:background="@android:drawable/btn_plus">Ten by Ten</ImageButton>
+                android:src="@drawable/bible"
+                android:layout_height="75dp"
+                android:layout_width="75dp"
+                android:layout_marginRight="75dp"
+                android:scaleType="fitXY"
+                android:background="@drawable/my_border"
+                android:padding="6dp">Ten And Tens</ImageButton>
 
             <ImageButton
                 android:id="@+id/eventsButton"
-                android:padding="50dp"
-                android:background="@android:drawable/ic_menu_agenda">Events
+                android:src="@drawable/calendar"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:scaleType="fitXY"
+                android:background="@drawable/my_border"
+                android:padding="6dp">Events
             </ImageButton>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="3dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/ten_and_tens"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:id="@+id/textView3"
+                android:gravity="center_horizontal"
+                android:layout_marginRight="75dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/events"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:id="@+id/textView4"
+                android:gravity="center_horizontal"/>
         </TableRow>
 
         <TableRow
             android:id="@+id/menu_row_2"
-            android:padding="20dp"
+            android:layout_marginTop="20dp"
             android:layout_centerHorizontal="true">
 
             <ImageButton
                 android:id="@+id/announcementsButton"
-                android:background="@android:drawable/ic_menu_day"
-                android:padding="50dp">Announcements</ImageButton>
+                android:maxWidth="75dp"
+                android:src="@drawable/megaphone"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:layout_marginRight="75dp"
+                android:scaleType="fitXY"
+                android:background="@drawable/my_border"
+                android:padding="6dp">Announcements</ImageButton>
 
             <ImageButton
                 android:id="@+id/aboutUsButton"
-                android:padding="50dp"
-                android:background="@android:drawable/ic_menu_myplaces">About Us
+                android:src="@drawable/unhindered_logo"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:scaleType="fitXY"
+                android:background="@drawable/my_border"
+                android:padding="6dp">About Us
             </ImageButton>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="3dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxWidth="75dp"
+                android:text="@string/alerts"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:id="@+id/textView"
+                android:gravity="center_horizontal"
+                android:layout_marginRight="75dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/about_us"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:id="@+id/textView2"
+                android:gravity="center_horizontal"/>
         </TableRow>
     </TableLayout>
 

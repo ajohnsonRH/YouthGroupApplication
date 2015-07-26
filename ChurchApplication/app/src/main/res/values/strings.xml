@@ -3,6 +3,10 @@
 
     <string name="app_name">Youth Group</string>
     <string name="action_settings">Settings</string>
+    <string name="about_us">About Us</string>
+    <string name="alerts">Alerts</string>
+    <string name="ten_and_tens">10X10s</string>
+    <string name="events">Events</string>
     <string name="title_activity_about_us">About Us</string>
     <string name="about_us_paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pharetra non nibh ut gravida. Pellentesque felis velit, pharetra vitae erat id,
         blandit consectetur enim. Vivamus volutpat, nisl sed dapibus egestas.</string>
