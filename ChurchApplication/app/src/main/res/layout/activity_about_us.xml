@@ -9,16 +9,24 @@
     android:background="@color/sky_blue"
     tools:context="church_application.rose_hulman.edu.churchapplication.AboutUsActivity">
 
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
     <TextView
         android:id="@+id/who_we_are_title"
         android:text="@string/aboutUsTitle"
         android:textSize="25sp"
+        android:textColor="@color/black"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
     <TextView
         android:id="@+id/about_us"
         android:text="@string/about_us_paragraph"
+        android:textColor="@color/black"
         android:layout_below="@id/who_we_are_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -32,26 +40,46 @@
 
         <TableRow>
 
-            <ImageButton android:background="@android:drawable/ic_menu_crop" />
+            <ImageButton android:src="@drawable/ryan"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:scaleType="fitXY"
+                android:padding="5dp"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/my_border"/>
 
-            <TextView android:text="@string/pastorRyan" android:padding="10dp"/>
+            <TextView android:text="@string/pastorRyan" android:padding="10dp"
+                android:textColor="@color/black"
+                android:layout_gravity="center_vertical"/>
 
-            <ImageButton android:background="@android:drawable/sym_action_email" android:id="@+id/contact_Pastor_Ryan_Button"/>
+            <ImageButton android:background="@android:drawable/sym_action_email" android:id="@+id/contact_Pastor_Ryan_Button"
+                android:layout_gravity="center_vertical"/>
         </TableRow>
 
-        <TableRow>
+        <TableRow android:layout_marginTop="5dp">
 
-            <ImageButton android:background="@android:drawable/ic_menu_crop" />
+            <ImageButton android:src="@drawable/michelle"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:scaleType="fitXY"
+                android:padding="5dp"
+                android:background="@drawable/my_border"
+                android:layout_gravity="center_vertical"/>
 
-            <TextView android:text="@string/pastorMichelle" android:padding="10dp" />
+            <TextView android:text="@string/pastorMichelle" android:padding="10dp"
+                android:layout_gravity="center_vertical"
+                android:textColor="@color/black"
+                />
 
-            <ImageButton android:background="@android:drawable/sym_action_email" android:id="@+id/contact_Pastor_Michelle_Button"/>
+            <ImageButton android:background="@android:drawable/sym_action_email" android:id="@+id/contact_Pastor_Michelle_Button"
+                android:layout_gravity="center_vertical"/>
         </TableRow>
     </TableLayout>
     <TextView
         android:id="@+id/what_we_believe_title"
         android:layout_below="@+id/contact_table"
         android:text="@string/what_we_believe_title_text"
+        android:textColor="@color/black"
         android:textSize="25sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
@@ -59,6 +87,7 @@
     <TextView
         android:id="@+id/what_we_believe_paragraph"
         android:text="@string/what_we_believe_paragraph"
+        android:textColor="@color/black"
         android:layout_below="@id/what_we_believe_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -67,6 +96,7 @@
         android:id="@+id/how_to_connect_title"
         android:layout_below="@+id/what_we_believe_paragraph"
         android:text="@string/how_to_connect_title_text"
+        android:textColor="@color/black"
         android:textSize="25sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
@@ -74,6 +104,7 @@
     <TextView
         android:id="@+id/how_to_connect_paragraph"
         android:text="@string/how_to_connect_text"
+        android:textColor="@color/black"
         android:layout_below="@id/how_to_connect_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -84,7 +115,6 @@
     <!--android:layout_width="wrap_content"-->
     <!--android:layout_height="wrap_content"-->
     <!--android:background="@drawable/youth_group"/>-->
-
-
-
+        </RelativeLayout>
+    </ScrollView>
 </RelativeLayout>
