@@ -3,18 +3,23 @@
 
     <string name="app_name">Youth Group</string>
     <string name="action_settings">Settings</string>
+    <string name="about_us">About Us</string>
+    <string name="alerts">Alerts</string>
+    <string name="ten_and_tens">10X10s</string>
+    <string name="events">Events</string>
     <string name="title_activity_about_us">About Us</string>
-    <string name="about_us_paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pharetra non nibh ut gravida. Pellentesque felis velit, pharetra vitae erat id,
-        blandit consectetur enim. Vivamus volutpat, nisl sed dapibus egestas.</string>
+    <string name="about_us_paragraph">Unhindered Student Ministries is a Student Church that is a ministry of Jasonville Assembly of God. \n
+        \nAs a student oriented church we have 3 Goals. \n
+        \nQuality - We believe that we (as individuals) can really make a difference in our world and in the lives of other people. We take seriously the Bible\'s instructions, "Whatever you do work at it with all your heart, as working for God, not for other people." Whatever we do as individuals, as a group, or as a church, it is important that we do it as well as we can. \n
+        \nCommunity - We know that community is important for us (as individuals) to grow and mature. We learn how to talk, how to walk, and (manytimes) what to believe from those that we spend time around and respect their opinions. At Unhindered we understand that and are focused on growing and maturing  together as a group as individuals and to be like Jesus. \n
+        \nLove - Love is the very core of who God is and how He approaches us. True love is that God the Father gave Jesus his Son to die for our wrongdoings and make a way for us to have a real relationship with God. Our ULTIMATE Goal is to love people and God genuinely and entirely</string>
     <string name="aboutUsTitle">Who We Are</string>
     <string name="pastorRyan">Pastor Ryan</string>
     <string name="pastorMichelle">Pastor Michelle</string>
-    <string name="what_we_believe_paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pharetra non nibh ut gravida. Pellentesque felis velit, pharetra vitae erat id,
-        blandit consectetur enim. Vivamus volutpat, nisl sed dapibus egestas.</string>
+    <string name="what_we_believe_paragraph">JESUS!!!!!!!!!!!!</string>
     <string name="what_we_believe_title_text">What We Believe</string>
     <string name="how_to_connect_title_text">How To Connect</string>
-    <string name="how_to_connect_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pharetra non nibh ut gravida. Pellentesque felis velit, pharetra vitae erat id,
-        blandit consectetur enim. Vivamus volutpat, nisl sed dapibus egestas.</string>
+    <string name="how_to_connect_text">You can connect to Unhindered by joining us on Wednesdays from 7 - 8 p.m. or Sundays from either 9:30 a.m. - 12 p.m. or 6:30 - 8 p.m. \n \nYou can also like us on Facebook, follow us on Twitter and Instagram, and add our Unhindered Jams And Worship playlist on Spotifiy. \n \nWe hope to connect with you soon!</string>
     <string name="title_activity_announcements">Announcements</string>
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_events">EventsActivity</string>

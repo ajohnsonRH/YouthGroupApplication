@@ -21,10 +21,10 @@ public class AboutUsActivity extends Activity implements View.OnClickListener{
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.contact_Pastor_Ryan_Button:
-                Log.e("About Us Activity", "Contacting Pastor Ryan");
+                Log.e("About Us Activity", "Contacting Pastor ryan");
                 break;
             case R.id.contact_Pastor_Michelle_Button:
-                Log.e("About Us Activity", "Contacting Pastor Michelle");
+                Log.e("About Us Activity", "Contacting Pastor michelle");
                 break;
         }
     }
