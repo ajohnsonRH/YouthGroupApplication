@@ -7,7 +7,7 @@
 
     <ListView
         android:id="@+id/announcement_ListView"
-        android:background="@color/grey"
+        android:background="@color/sky_blue"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
