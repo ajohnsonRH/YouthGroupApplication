@@ -40,7 +40,7 @@
 
         <TableRow>
 
-            <ImageButton android:src="@drawable/ryan"
+            <ImageButton android:src="@drawable/pastor_ryan"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:scaleType="fitXY"
@@ -58,7 +58,7 @@
 
         <TableRow android:layout_marginTop="5dp">
 
-            <ImageButton android:src="@drawable/michelle"
+            <ImageButton android:src="@drawable/pastor_michelle"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:scaleType="fitXY"
