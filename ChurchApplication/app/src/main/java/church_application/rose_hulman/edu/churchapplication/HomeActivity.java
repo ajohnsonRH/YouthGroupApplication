@@ -45,4 +45,11 @@ public class HomeActivity extends Activity implements View.OnClickListener {
                 break;
         }
     }
+    @Override
+    public void onBackPressed() {
+        // super.onBackPressed();
+        Intent intent = new Intent();
+        setResult(RESULT_OK, intent);
+        finish();
+    }
 }
