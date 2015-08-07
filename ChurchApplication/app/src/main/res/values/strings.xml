@@ -25,5 +25,6 @@
     <string name="title_activity_events">EventsActivity</string>
     <string name="title_activity_ten_by_ten">TenByTenActivity</string>
     <string name="daily_reading_title">Daily Scripture Reading:</string>
+    <string name="sync">Sync</string>
 
 </resources>

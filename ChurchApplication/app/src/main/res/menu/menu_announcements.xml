@@ -1,6 +1,11 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="church_application.rose_hulman.edu.churchapplication.AnnouncementsActivity">
-    <item android:id="@+id/action_settings" android:title="@string/action_settings"
-        android:orderInCategory="100" android:showAsAction="never" />
+    <item
+        android:id="@+id/sync"
+        android:icon="@drawable/ic_menu_sync"
+        android:orderInCategory="100"
+        android:showAsAction="ifRoom"
+        android:title="@string/sync"
+        android:titleCondensed="@string/sync"/>
 </menu>

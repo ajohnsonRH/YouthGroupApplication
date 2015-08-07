@@ -3,14 +3,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="8dp"
+    android:background="@color/sky_blue"
     tools:context="church_application.rose_hulman.edu.churchapplication.AnnouncementsActivity">
 
     <ListView
-        android:id="@+id/announcement_ListView"
-        android:background="@color/sky_blue"
+        android:id="@android:id/list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
+        android:background="@color/sky_blue"
         android:drawSelectorOnTop="false">
         </ListView>
 
