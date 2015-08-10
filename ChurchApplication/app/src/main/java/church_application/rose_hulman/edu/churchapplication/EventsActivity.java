@@ -15,7 +15,9 @@ import android.widget.TableRow;
 import android.widget.Toast;
 
 import com.appspot.unhindered_student_ministries.ministry.Ministry;
+import com.appspot.unhindered_student_ministries.ministry.model.Announcement;
 import com.appspot.unhindered_student_ministries.ministry.model.AnnouncementCollection;
+import com.appspot.unhindered_student_ministries.ministry.model.Event;
 import com.appspot.unhindered_student_ministries.ministry.model.EventCollection;
 import com.google.api.client.extensions.android.http.AndroidHttp;
 import com.google.api.client.json.gson.GsonFactory;
@@ -24,6 +26,9 @@ import com.google.api.client.json.gson.GsonFactory;
 public class EventsActivity extends ListActivity {
 
     private Ministry mService;
+    static final String KEY_EVENT_TITLE = "KEY_EVENT_TITLE";
+    static final String KEY_EVENT_DATE = "KEY_EVENT_DATE";
+    static final String KEY_EVENT_DESCRIPTION = "KEY_EVENT_DESCRIPTION";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +40,18 @@ public class EventsActivity extends ListActivity {
         mService = builder.build();
 
         updateEvents();
+    }
+
+    @Override
+    protected void onListItemClick(ListView l, View v, int position, long id) {
+
+        final Event currentEvent = (Event) getListAdapter().getItem(position);
+        Intent eventDetailsIntent = new Intent(this, EventDetailsActivity.class);
+        eventDetailsIntent.putExtra(KEY_EVENT_TITLE, currentEvent.getTitle());
+        eventDetailsIntent.putExtra(KEY_EVENT_DATE, currentEvent.getDate());
+        eventDetailsIntent.putExtra(KEY_EVENT_DESCRIPTION, currentEvent.getDescription());
+        this.startActivity(eventDetailsIntent);
+        super.onListItemClick(l, v, position, id);
     }
 
     @Override

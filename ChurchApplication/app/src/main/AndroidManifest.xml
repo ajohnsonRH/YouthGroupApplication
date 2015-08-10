@@ -32,6 +32,15 @@
             android:name=".TenByTenActivity"
             android:label="@string/title_activity_ten_by_ten" >
         </activity>
+        <activity
+            android:name=".AnnouncementDetailsActivity"
+            android:label="Announcement Details" >
+        </activity>
+        <activity
+            android:name=".EventDetailsActivity"
+            android:label="Event Details" >
+        </activity>
+
     </application>
 
 </manifest>

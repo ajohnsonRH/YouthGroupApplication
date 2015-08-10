@@ -5,6 +5,7 @@ import java.util.List;
 import com.appspot.unhindered_student_ministries.ministry.model.Event;
 
 import android.content.Context;
+import android.text.InputType;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
@@ -20,8 +21,12 @@ public class EventsArrayAdapter extends ArrayAdapter<Event> {
     public View getView(int position, View convertView, ViewGroup parent) {
         View view = super.getView(position, convertView, parent);
         TextView titleTextView = (TextView) view.findViewById(android.R.id.text2);
+        titleTextView.setInputType(InputType.TYPE_CLASS_TEXT);
+        titleTextView.setHorizontalFadingEdgeEnabled(true);
         titleTextView.setText(getItem(position).getTitle());
         TextView dateTextView = (TextView) view.findViewById(android.R.id.text1);
+        dateTextView.setInputType(InputType.TYPE_CLASS_TEXT);
+        dateTextView.setHorizontalFadingEdgeEnabled(true);
         dateTextView.setText(getItem(position).getDate() + " " + getItem(position).getTime());
         return view;
     }
