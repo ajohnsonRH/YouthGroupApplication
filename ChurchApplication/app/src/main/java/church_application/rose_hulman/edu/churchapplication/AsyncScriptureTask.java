@@ -1,6 +1,7 @@
 package church_application.rose_hulman.edu.churchapplication;
 
 import android.os.AsyncTask;
+import android.util.Log;
 
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -12,11 +13,13 @@ import java.net.URL;
  */
 public class AsyncScriptureTask extends AsyncTask<Void, Void, Void> {
     //private String httpget = "http://www.esvapi.org/v2/rest/passageQuery?key=IP&passage=";
-    private String testhttpget = "http://www.esvapi.org/v2/rest/passageQuery?key=IP&passage=John+1";
+    private String testhttpget = "http://labs.bible.org/api/?passage=John%203:16-17";
+    private String input;
 
     @Override
     protected Void doInBackground(Void... voids) {
         URL url;
+        String input = "";
         HttpURLConnection urlConnection = null;
         try {
             url = new URL(testhttpget);
@@ -31,9 +34,9 @@ public class AsyncScriptureTask extends AsyncTask<Void, Void, Void> {
             while (data != -1) {
                 char current = (char) data;
                 data = isw.read();
-                System.out.print(current);
+                input += current;
             }
-            urlConnection.disconnect();
+            setInput(input);
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
@@ -46,6 +49,8 @@ public class AsyncScriptureTask extends AsyncTask<Void, Void, Void> {
         return null;
     }
 
+
+
     protected void onPreExecute() {
         //display progress dialog.
 
@@ -53,5 +58,13 @@ public class AsyncScriptureTask extends AsyncTask<Void, Void, Void> {
 
     protected void onPostExecute(Void result) {
         // dismiss progress dialog and update ui
+    }
+
+    public void setInput(String input) {
+        this.input = input;
+    }
+
+    public String getInput() {
+        return input;
     }
 }

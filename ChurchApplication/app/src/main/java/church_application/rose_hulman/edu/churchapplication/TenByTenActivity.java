@@ -16,14 +16,25 @@ import java.net.URL;
 
 
 public class TenByTenActivity extends Activity {
+    private TextView textView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ten_by_ten);
         getActionBar().setDisplayHomeAsUpEnabled(true);
-        TextView textView = (TextView) findViewById(R.id.daily_scripture_text);
+        textView = (TextView) findViewById(R.id.daily_scripture_text);
         textView.setText("Scripture text/daily reading/verse references");
-        new AsyncScriptureTask().execute();
+        AsyncScriptureTask asyncTask = new AsyncScriptureTask();
+        asyncTask.execute();
+        while(asyncTask.getInput()==null ){
+        } //TODO figure out a better way to do this
+        parseXMLforDisplay(asyncTask.getInput());
+    }
+
+    private void parseXMLforDisplay(String input) {
+        input = input.replace("<b>","");
+        input = input.replace("</b>","");
+        textView.setText(input);
     }
 
     @Override
