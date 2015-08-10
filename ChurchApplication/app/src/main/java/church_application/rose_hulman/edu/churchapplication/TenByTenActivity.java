@@ -24,7 +24,9 @@ public class TenByTenActivity extends Activity {
         getActionBar().setDisplayHomeAsUpEnabled(true);
         textView = (TextView) findViewById(R.id.daily_scripture_text);
         textView.setText("Scripture text/daily reading/verse references");
-        AsyncScriptureTask asyncTask = new AsyncScriptureTask();
+        String verse = "John 3:1-8"; //Replace with call to database
+        ((TextView)findViewById(R.id.scripture_title)).setText(verse);
+        AsyncScriptureTask asyncTask = new AsyncScriptureTask("John%203");
         asyncTask.execute();
         while(asyncTask.getInput()==null ){
         } //TODO figure out a better way to do this
@@ -32,7 +34,7 @@ public class TenByTenActivity extends Activity {
     }
 
     private void parseXMLforDisplay(String input) {
-        input = input.replace("<b>","");
+        input = input.replace("<b>"," ");
         input = input.replace("</b>","");
         textView.setText(input);
     }

@@ -12,12 +12,25 @@
     <TextView
         android:id="@+id/daily_scripture_title"
         android:text="@string/daily_reading_title"
+        android:textSize="25sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
     <TextView
-        android:id="@+id/daily_scripture_text"
+        android:id="@+id/scripture_title"
+        android:text="@string/daily_reading"
         android:layout_below="@id/daily_scripture_title"
+        android:textSize="20sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <ScrollView
+        android:layout_below="@id/scripture_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <TextView
+        android:id="@+id/daily_scripture_text"
+        android:textSize="18sp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+    </ScrollView>
 </RelativeLayout>

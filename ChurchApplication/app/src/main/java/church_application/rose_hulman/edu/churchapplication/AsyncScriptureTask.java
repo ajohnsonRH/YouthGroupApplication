@@ -13,9 +13,11 @@ import java.net.URL;
  */
 public class AsyncScriptureTask extends AsyncTask<Void, Void, Void> {
     //private String httpget = "http://www.esvapi.org/v2/rest/passageQuery?key=IP&passage=";
-    private String testhttpget = "http://labs.bible.org/api/?passage=John%203:16-17";
+    private String testhttpget = "http://labs.bible.org/api/?passage=";
     private String input;
-
+    public  AsyncScriptureTask(String verses){
+        testhttpget+=verses;
+    }
     @Override
     protected Void doInBackground(Void... voids) {
         URL url;
