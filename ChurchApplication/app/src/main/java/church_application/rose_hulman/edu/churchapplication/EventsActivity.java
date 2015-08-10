@@ -68,6 +68,9 @@ public class EventsActivity extends ListActivity {
                 // sync
                 updateEvents();
                 return true;
+            default:
+                onBackPressed();
+                break;
         }
         return super.onOptionsItemSelected(item);
     }

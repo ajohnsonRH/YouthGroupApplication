@@ -70,6 +70,10 @@ public class AnnouncementsActivity extends ListActivity {
                 // sync
                 updateAnnouncements();
                 return true;
+            default:
+                onBackPressed();
+                break;
+
         }
         return super.onOptionsItemSelected(item);
     }

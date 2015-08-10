@@ -36,5 +36,13 @@ public class AboutUsActivity extends Activity implements View.OnClickListener{
         Intent intent = new Intent(this, HomeActivity.class);
         setResult(RESULT_OK, intent);
         finish();
+
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem menuItem)
+    {
+        onBackPressed();
+        return true;
     }
 }
