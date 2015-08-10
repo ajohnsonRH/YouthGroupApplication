@@ -29,4 +29,12 @@ public class TenByTenActivity extends Activity {
     }
 
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem menuItem)
+    {
+        onBackPressed();
+        return true;
+    }
+
+
 }
