@@ -16,6 +16,7 @@ import com.google.api.client.json.gson.GsonFactory;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Created by burchtm on 8/12/2015.
@@ -41,18 +42,19 @@ public class WidgetEventsService extends RemoteViewsService{
 
         @Override
         public void onCreate() {
-            updateEvents();
+            onDataSetChanged();
         }
 
         @Override
         public void onDataSetChanged()
         {
+            updateEvents();
+            Log.d("Size", "Size: " + mWidgetItems.size());
         }
 
         @Override
         public int getCount()
         {
-            Log.d("Size", "Size: " + mWidgetItems.size());
             return mWidgetItems.size();
         }
 
@@ -102,7 +104,15 @@ public class WidgetEventsService extends RemoteViewsService{
             mWidgetItems.addAll(list);
         }
 
-        private void updateEvents() { (new QueryForEventsTask()).withData(mContext, mAppWidgetId, this).execute(); }
+        private void updateEvents() {
+            QueryForEventsTask task = new QueryForEventsTask().withData(mContext, mAppWidgetId, this);
+            task.execute();
+            try {
+                task.get(10, TimeUnit.SECONDS);
+            } catch (Exception e){
+                Log.e("Unhindered", "Timeout");
+            }
+        }
 
     }
 
@@ -117,6 +127,7 @@ public class WidgetEventsService extends RemoteViewsService{
         protected EventCollection doInBackground(Void... params) {
             Ministry.Builder builder = new Ministry.Builder(AndroidHttp.newCompatibleTransport(), new GsonFactory(), null);
             mService = builder.build();
+            builder.setApplicationName(getString(R.string.app_name));
             EventCollection events = null;
             try {
                 Ministry.Event.List query = mService.event().list();
@@ -144,7 +155,6 @@ public class WidgetEventsService extends RemoteViewsService{
                 Log.e("Unhindered", "Failed loading, result is null");
             }
             mFactory.setItems(result.getItems());
-            AppWidgetManager.getInstance(mContext).notifyAppWidgetViewDataChanged(mAppWidgetId, R.id.widgetEventsListView);
         }
 
     }

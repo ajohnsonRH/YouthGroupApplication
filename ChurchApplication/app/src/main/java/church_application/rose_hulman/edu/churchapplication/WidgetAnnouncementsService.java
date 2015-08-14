@@ -19,6 +19,8 @@ import com.google.api.client.json.gson.GsonFactory;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
 
 /**
  * Created by burchtm on 8/12/2015.
@@ -28,7 +30,6 @@ public class WidgetAnnouncementsService extends RemoteViewsService {
     public RemoteViewsService.RemoteViewsFactory onGetViewFactory(Intent intent) {
         return new AnnouncementsRemoteViewsFactory(this.getApplicationContext(), intent);
     }
-
 
     class AnnouncementsRemoteViewsFactory implements
             RemoteViewsService.RemoteViewsFactory {
@@ -44,21 +45,21 @@ public class WidgetAnnouncementsService extends RemoteViewsService {
 
         @Override
         public void onCreate() {
-            updateAnnouncements();
+            onDataSetChanged();
         }
 
         @Override
         public void onDataSetChanged()
         {
+            updateAnnouncements();
+            Log.d("Size", "Size: " + mWidgetItems.size());
         }
 
         @Override
         public int getCount()
         {
-            Log.d("Size", "Size: "+ mWidgetItems.size());
             return mWidgetItems.size();
         }
-
         @Override
         public RemoteViews getViewAt(int position)
         {
@@ -105,7 +106,15 @@ public class WidgetAnnouncementsService extends RemoteViewsService {
             mWidgetItems.addAll(list);
         }
 
-        private void updateAnnouncements() { (new QueryForAnnouncementsTask()).withData(mContext, mAppWidgetId, this).execute(); }
+        private void updateAnnouncements() {
+            QueryForAnnouncementsTask task = new QueryForAnnouncementsTask().withData(mContext, mAppWidgetId, this);
+            task.execute();
+            try {
+                task.get(10, TimeUnit.SECONDS);
+            } catch (Exception e){
+                Log.e("Unhindered", "Timeout");
+            }
+        }
 
     }
 
@@ -119,6 +128,7 @@ public class WidgetAnnouncementsService extends RemoteViewsService {
         @Override
         protected AnnouncementCollection doInBackground(Void... params) {
             Ministry.Builder builder = new Ministry.Builder(AndroidHttp.newCompatibleTransport(), new GsonFactory(), null);
+            builder.setApplicationName(getString(R.string.app_name));
             mService = builder.build();
             AnnouncementCollection announcements = null;
             try {
@@ -147,7 +157,6 @@ public class WidgetAnnouncementsService extends RemoteViewsService {
                 Log.e("Unhindered", "Failed loading, result is null");
             }
             mFactory.setItems(result.getItems());
-            AppWidgetManager.getInstance(mContext).notifyAppWidgetViewDataChanged(mAppWidgetId, R.id.widgetAnnouncementsListView);
         }
 
     }
