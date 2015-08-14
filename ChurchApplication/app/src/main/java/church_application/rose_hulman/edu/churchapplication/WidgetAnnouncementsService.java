@@ -29,7 +29,6 @@ public class WidgetAnnouncementsService extends RemoteViewsService {
         return new AnnouncementsRemoteViewsFactory(this.getApplicationContext(), intent);
     }
 
-
     class AnnouncementsRemoteViewsFactory implements
             RemoteViewsService.RemoteViewsFactory {
         public ArrayList<Announcement> mWidgetItems = new ArrayList<Announcement>();

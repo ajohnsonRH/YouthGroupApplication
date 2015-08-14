@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="sky_blue">#E0F7FA</color>
+    <color name="mellow_blue">#83C4CD</color>
+    <color name="turquoise">#0097A7</color>
+    <color name="light_blue">#B4E3EA</color>
     <color name="black">#000000</color>
     <color name="grey">#CCCCCC</color>
     <color name="dark_grey">#888888</color>

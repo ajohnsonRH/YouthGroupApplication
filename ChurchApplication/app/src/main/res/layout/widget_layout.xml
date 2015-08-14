@@ -4,7 +4,7 @@
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:background="@color/grey"
+    android:background="@color/sky_blue"
     android:padding="@dimen/widget_margin"
     android:requiresFadingEdge="vertical|horizontal">
 
@@ -15,16 +15,15 @@
         android:textColor="@color/white"
         android:textStyle="bold"
         android:textSize="18sp"
-        android:background="@color/black"
+        android:background="@color/mellow_blue"
         android:id="@+id/widgetEventsTitle"
         android:layout_gravity="center_horizontal"
         android:gravity="center"/>
-
     <ListView
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginTop="5dp"
-        android:background="@color/dark_grey"
+        android:background="@color/turquoise"
         android:id="@+id/widgetEventsListView"
         android:layout_gravity="center_horizontal" />
 
@@ -35,7 +34,7 @@
         android:text="Announcements"
         android:textStyle="bold"
         android:textColor="@color/white"
-        android:background="@color/black"
+        android:background="@color/mellow_blue"
         android:textSize="18sp"
         android:id="@+id/widgetAnnouncementsTitle"
         android:layout_gravity="center_horizontal"
@@ -45,7 +44,7 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginTop="5dp"
-        android:background="@color/dark_grey"
+        android:background="@color/turquoise"
         android:id="@+id/widgetAnnouncementsListView"
         android:layout_gravity="center_horizontal"/>
 

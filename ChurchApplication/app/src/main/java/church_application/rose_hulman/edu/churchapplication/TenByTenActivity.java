@@ -17,25 +17,25 @@ import java.net.URL;
 
 public class TenByTenActivity extends Activity {
     private TextView textView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ten_by_ten);
         getActionBar().setDisplayHomeAsUpEnabled(true);
         textView = (TextView) findViewById(R.id.daily_scripture_text);
-        textView.setText("Scripture text/daily reading/verse references");
         String verse = "John 3:1-8"; //Replace with call to database
-        ((TextView)findViewById(R.id.scripture_title)).setText(verse);
-        AsyncScriptureTask asyncTask = new AsyncScriptureTask("John%203");
+        ((TextView) findViewById(R.id.scripture_title)).setText(verse);
+        AsyncScriptureTask asyncTask = new AsyncScriptureTask(verse.replace(" ", "%20"));
         asyncTask.execute();
-        while(asyncTask.getInput()==null ){
+        while (asyncTask.getInput() == null) {
         } //TODO figure out a better way to do this
         parseXMLforDisplay(asyncTask.getInput());
     }
 
     private void parseXMLforDisplay(String input) {
-        input = input.replace("<b>"," ");
-        input = input.replace("</b>","");
+        input = input.replace("<b>", " ");
+        input = input.replace("</b>", "");
         textView.setText(input);
     }
 

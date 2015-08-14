@@ -9,10 +9,10 @@
         android:topLeftRadius="7dp"
         android:topRightRadius="7dp" />
 
-    <solid android:color="#E0F7FA" />
+    <solid android:color="@color/sky_blue" />
 
     <stroke
         android:width="5dp"
-        android:color="#0097A7" />
+        android:color="@color/turquoise" />
 
 </shape>
