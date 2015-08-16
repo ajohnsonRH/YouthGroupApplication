@@ -4,6 +4,7 @@ import android.appwidget.AppWidgetManager;
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
+import android.os.Bundle;
 import android.util.Log;
 import android.widget.RemoteViews;
 import android.widget.RemoteViewsService;
@@ -33,6 +34,10 @@ public class WidgetEventsService extends RemoteViewsService{
         public ArrayList<Event> mWidgetItems = new ArrayList<Event>();
         private Context mContext;
         private int mAppWidgetId;
+        static final String KEY_EVENT_TITLE = "KEY_EVENT_TITLE";
+        static final String KEY_EVENT_DATE = "KEY_EVENT_DATE";
+        static final String KEY_EVENT_DESCRIPTION = "KEY_EVENT_DESCRIPTION";
+
 
         public EventsRemoteViewsFactory(Context context, Intent intent) {
             mContext = context;
@@ -64,6 +69,12 @@ public class WidgetEventsService extends RemoteViewsService{
             RemoteViews rv = new RemoteViews(mContext.getPackageName(), R.layout.widget_item);
             rv.setTextViewText(R.id.text1, mWidgetItems.get(position).getTitle());
             rv.setTextViewText(R.id.text2, mWidgetItems.get(position).getDate());
+            Intent eventDetailsIntent = new Intent();
+            eventDetailsIntent.putExtra(KEY_EVENT_TITLE, mWidgetItems.get(position).getTitle());
+            eventDetailsIntent.putExtra(KEY_EVENT_DATE, mWidgetItems.get(position).getDate());
+            eventDetailsIntent.putExtra(KEY_EVENT_DESCRIPTION, mWidgetItems.get(position).getDescription());
+            eventDetailsIntent.putExtra("determine", "event");
+            rv.setOnClickFillInIntent(R.id.widgetItemButton, eventDetailsIntent);
             return rv;
         }
 

@@ -36,6 +36,8 @@ public class WidgetAnnouncementsService extends RemoteViewsService {
         public ArrayList<Announcement> mWidgetItems = new ArrayList<Announcement>();
         private Context mContext;
         private int mAppWidgetId;
+        static final String KEY_ANNOUNCEMENT_TITLE = "KEY_ANNOUNCEMENT_TITLE";
+        static final String KEY_ANNOUNCEMENT_DESCRIPTION = "KEY_ANNOUNCEMENT_DESCRIPTION";
 
         public AnnouncementsRemoteViewsFactory(Context context, Intent intent) {
             mContext = context;
@@ -66,6 +68,11 @@ public class WidgetAnnouncementsService extends RemoteViewsService {
             RemoteViews rv = new RemoteViews(mContext.getPackageName(), R.layout.widget_item);
             rv.setTextViewText(R.id.text1, mWidgetItems.get(position).getTitle());
             rv.setTextViewText(R.id.text2, mWidgetItems.get(position).getDescription());
+            Intent announcementDetailsIntent = new Intent();
+            announcementDetailsIntent.putExtra(KEY_ANNOUNCEMENT_TITLE, mWidgetItems.get(position).getTitle());
+            announcementDetailsIntent.putExtra(KEY_ANNOUNCEMENT_DESCRIPTION, mWidgetItems.get(position).getDescription());
+            announcementDetailsIntent.putExtra("determine", "announcement");
+            rv.setOnClickFillInIntent(R.id.widgetItemButton, announcementDetailsIntent);
             return rv;
         }
 
