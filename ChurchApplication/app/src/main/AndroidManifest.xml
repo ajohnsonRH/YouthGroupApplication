@@ -43,7 +43,9 @@
 
         <receiver android:name=".MinistryWidgetProvider" >
             <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="android.appwidget.action.APPWIDGET_PICK" />
             </intent-filter>
             <meta-data android:name="android.appwidget.provider"
                 android:resource="@xml/widget_provider" />
@@ -51,7 +53,7 @@
         <service android:name=".WidgetAnnouncementsService"
         android:permission="android.permission.BIND_REMOTEVIEWS" />
         <service android:name=".WidgetEventsService"
-            android:permission="android.permission.BIND_REMOTEVIEWS" />
+        android:permission="android.permission.BIND_REMOTEVIEWS" />
 
     </application>
 

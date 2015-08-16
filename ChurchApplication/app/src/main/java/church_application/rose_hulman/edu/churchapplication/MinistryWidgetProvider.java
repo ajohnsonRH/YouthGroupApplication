@@ -71,6 +71,13 @@ public class MinistryWidgetProvider extends AppWidgetProvider{
             long interval = 1000*60*30;
             alarm.setRepeating(AlarmManager.ELAPSED_REALTIME, SystemClock.elapsedRealtime(), interval, pendingServiceIntent1);
 
+            Intent listItemClickIntent = new Intent(context, MinistryWidgetProvider.class);
+            listItemClickIntent.setAction(AppWidgetManager.ACTION_APPWIDGET_PICK);
+            //listItemClickIntent.setData(Uri.parse(listItemClickIntent.toUri(Intent.URI_INTENT_SCHEME)));
+            PendingIntent clickPendingIntent = PendingIntent.getBroadcast(context, 0, listItemClickIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+            rv.setPendingIntentTemplate(R.id.widgetAnnouncementsListView, clickPendingIntent);
+            rv.setPendingIntentTemplate(R.id.widgetEventsListView, clickPendingIntent);
+
             context.startService(intent1);
             context.startService(intent2);
             appWidgetManager.updateAppWidget(appWidgetIds[0], rv);
@@ -85,7 +92,16 @@ public class MinistryWidgetProvider extends AppWidgetProvider{
             AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(context);
             appWidgetManager.notifyAppWidgetViewDataChanged(appWidgetIds[0], R.id.widgetAnnouncementsListView);
             appWidgetManager.notifyAppWidgetViewDataChanged(appWidgetIds[0], R.id.widgetEventsListView);
+        } else if (intent.getAction().equals(AppWidgetManager.ACTION_APPWIDGET_PICK)){
+            if(intent.getStringExtra("determine").equals("event")){
+                intent.setClass(context, EventDetailsActivity.class);
+                context.startActivity(intent);
+            } else {
+                intent.setClass(context, AnnouncementDetailsActivity.class);
+                context.startActivity(intent);
+            }
         }
+
 
         super.onReceive(context, intent);
     }
