@@ -32,7 +32,6 @@ public class MinistryWidgetProvider extends AppWidgetProvider{
     private static ListView mEventsList;
     private static ListView mAnnouncementsList;
 
-
     @Override
     public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds){
             // Set up the intent that starts the StackViewService, which will
@@ -69,7 +68,7 @@ public class MinistryWidgetProvider extends AppWidgetProvider{
             final AlarmManager alarm = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
             alarm.cancel(pendingServiceIntent1);
             long interval = 1000*60*30;
-            alarm.setRepeating(AlarmManager.ELAPSED_REALTIME, SystemClock.elapsedRealtime(), interval, pendingServiceIntent1);
+            alarm.set(AlarmManager.RTC, System.currentTimeMillis() + interval, pendingServiceIntent1);
 
             Intent listItemClickIntent = new Intent(context, MinistryWidgetProvider.class);
             listItemClickIntent.setAction(AppWidgetManager.ACTION_APPWIDGET_PICK);
