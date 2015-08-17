@@ -15,7 +15,10 @@ import com.appspot.unhindered_student_ministries.ministry.model.EventCollection;
 import com.google.api.client.extensions.android.http.AndroidHttp;
 import com.google.api.client.json.gson.GsonFactory;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -68,10 +71,24 @@ public class WidgetEventsService extends RemoteViewsService{
         {
             RemoteViews rv = new RemoteViews(mContext.getPackageName(), R.layout.widget_item);
             rv.setTextViewText(R.id.text1, mWidgetItems.get(position).getTitle());
-            rv.setTextViewText(R.id.text2, mWidgetItems.get(position).getDate());
+
+            Date date;
+            String newDateString  = null;
+            DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSSSSS");
+            try{
+                date = df.parse(mWidgetItems.get(position).getDate() + " " + mWidgetItems.get(position).getTime());
+                SimpleDateFormat newDf = new SimpleDateFormat("MMMM dd, yyyy hh:mma");
+                newDateString = newDf.format(date);
+
+            }
+            catch (Exception e) {
+                Log.e("Unhindered", "Error parsing date");
+            }
+
+            rv.setTextViewText(R.id.text2, newDateString);
             Intent eventDetailsIntent = new Intent();
             eventDetailsIntent.putExtra(KEY_EVENT_TITLE, mWidgetItems.get(position).getTitle());
-            eventDetailsIntent.putExtra(KEY_EVENT_DATE, mWidgetItems.get(position).getDate());
+            eventDetailsIntent.putExtra(KEY_EVENT_DATE, newDateString);
             eventDetailsIntent.putExtra(KEY_EVENT_DESCRIPTION, mWidgetItems.get(position).getDescription());
             eventDetailsIntent.putExtra("determine", "event");
             rv.setOnClickFillInIntent(R.id.widgetItemButton, eventDetailsIntent);

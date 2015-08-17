@@ -22,6 +22,10 @@ import com.appspot.unhindered_student_ministries.ministry.model.EventCollection;
 import com.google.api.client.extensions.android.http.AndroidHttp;
 import com.google.api.client.json.gson.GsonFactory;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 
 public class EventsActivity extends ListActivity {
 
@@ -48,7 +52,19 @@ public class EventsActivity extends ListActivity {
         final Event currentEvent = (Event) getListAdapter().getItem(position);
         Intent eventDetailsIntent = new Intent(this, EventDetailsActivity.class);
         eventDetailsIntent.putExtra(KEY_EVENT_TITLE, currentEvent.getTitle());
-        eventDetailsIntent.putExtra(KEY_EVENT_DATE, currentEvent.getDate());
+        Date date;
+        String newDateString  = null;
+        DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSSSSS");
+        try{
+            date = df.parse(currentEvent.getDate() + " " + currentEvent.getTime());
+            SimpleDateFormat newDf = new SimpleDateFormat("MMMM dd, yyyy hh:mma");
+            newDateString = newDf.format(date);
+
+        }
+        catch (Exception e) {
+            Log.e("Unhindered", "Error parsing date");
+        }
+        eventDetailsIntent.putExtra(KEY_EVENT_DATE, newDateString);
         eventDetailsIntent.putExtra(KEY_EVENT_DESCRIPTION, currentEvent.getDescription());
         this.startActivity(eventDetailsIntent);
         super.onListItemClick(l, v, position, id);

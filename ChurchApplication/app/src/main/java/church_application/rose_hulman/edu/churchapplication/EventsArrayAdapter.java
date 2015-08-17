@@ -1,5 +1,7 @@
 package church_application.rose_hulman.edu.churchapplication;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
@@ -7,6 +9,7 @@ import com.appspot.unhindered_student_ministries.ministry.model.Event;
 
 import android.content.Context;
 import android.text.InputType;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
@@ -28,7 +31,19 @@ public class EventsArrayAdapter extends ArrayAdapter<Event> {
         TextView dateTextView = (TextView) view.findViewById(android.R.id.text1);
         dateTextView.setInputType(InputType.TYPE_CLASS_TEXT);
         dateTextView.setHorizontalFadingEdgeEnabled(true);
-        dateTextView.setText(getItem(position).getDate() + " " + getItem(position).getTime());
+        Date date;
+        String newDateString  = null;
+        DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSSSSS");
+        try{
+            date = df.parse(getItem(position).getDate() + " " + getItem(position).getTime());
+            SimpleDateFormat newDf = new SimpleDateFormat("MMMM dd, yyyy hh:mma");
+            newDateString = newDf.format(date);
+
+        }
+        catch (Exception e) {
+            Log.e("Unhindered", "Error parsing date");
+        }
+        dateTextView.setText(newDateString);
         return view;
     }
 

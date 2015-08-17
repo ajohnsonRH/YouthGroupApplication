@@ -94,9 +94,11 @@ public class MinistryWidgetProvider extends AppWidgetProvider{
         } else if (intent.getAction().equals(AppWidgetManager.ACTION_APPWIDGET_PICK)){
             if(intent.getStringExtra("determine").equals("event")){
                 intent.setClass(context, EventDetailsActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(intent);
             } else {
                 intent.setClass(context, AnnouncementDetailsActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(intent);
             }
         }

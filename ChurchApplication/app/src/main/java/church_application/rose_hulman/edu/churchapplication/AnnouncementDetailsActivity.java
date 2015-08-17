@@ -3,6 +3,7 @@ package church_application.rose_hulman.edu.churchapplication;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.widget.TextView;
 
 /**
@@ -24,6 +25,20 @@ public class AnnouncementDetailsActivity extends Activity{
         titleView.setText(title);
         TextView descriptionView = (TextView) findViewById(R.id.announcementDescriptionTextView);
         descriptionView.setText(description);
+    }
+
+    @Override
+    public void onBackPressed() {
+        // super.onBackPressed();
+        Intent intent = new Intent(this, AnnouncementsActivity.class);
+        setResult(RESULT_OK, intent);
+        finish();
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        onBackPressed();
+        return super.onOptionsItemSelected(item);
     }
 
 }
