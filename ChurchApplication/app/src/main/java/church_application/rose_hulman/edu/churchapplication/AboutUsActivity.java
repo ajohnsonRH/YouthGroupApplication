@@ -25,11 +25,11 @@ public class AboutUsActivity extends Activity implements View.OnClickListener{
         switch (view.getId()){
             case R.id.contact_Pastor_Ryan_Button:
                 Log.e("About Us Activity", "Contacting Pastor pastor_ryan");
-                email("pastorryan@ministry.com");
+                email(getString(R.string.emailAddressForPastorRyan));
                 break;
             case R.id.contact_Pastor_Michelle_Button:
                 Log.e("About Us Activity", "Contacting Pastor pastor_michelle");
-                email("pastormichelle@ministry.com");
+                email(getString(R.string.emailAddressForPastorMichelle));
                 break;
         }
     }
