@@ -2,6 +2,7 @@ package church_application.rose_hulman.edu.churchapplication;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.*;
@@ -24,12 +25,21 @@ public class AboutUsActivity extends Activity implements View.OnClickListener{
         switch (view.getId()){
             case R.id.contact_Pastor_Ryan_Button:
                 Log.e("About Us Activity", "Contacting Pastor pastor_ryan");
+                email("pastorryan@ministry.com");
                 break;
             case R.id.contact_Pastor_Michelle_Button:
                 Log.e("About Us Activity", "Contacting Pastor pastor_michelle");
+                email("pastormichelle@ministry.com");
                 break;
         }
     }
+
+    private void email(String emailAddress) {
+        Intent intent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts(
+                "mailto", emailAddress, null));
+        startActivity(Intent.createChooser(intent, "Choose an Email client :"));
+    }
+
     @Override
     public void onBackPressed() {
         // super.onBackPressed();
