@@ -118,6 +118,7 @@ public class AnnouncementsActivity extends ListActivity {
             super.onPostExecute(result);
             if (result == null) {
                 Log.e("Unhindered", "Failed loading, result is null");
+                return;
             }
 
             AnnouncementsArrayAdapter adapter = new AnnouncementsArrayAdapter(AnnouncementsActivity.this,

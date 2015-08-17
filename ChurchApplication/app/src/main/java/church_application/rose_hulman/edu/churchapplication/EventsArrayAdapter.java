@@ -1,5 +1,6 @@
 package church_application.rose_hulman.edu.churchapplication;
 
+import java.util.Date;
 import java.util.List;
 
 import com.appspot.unhindered_student_ministries.ministry.model.Event;

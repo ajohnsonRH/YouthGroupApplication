@@ -95,7 +95,7 @@ public class EventsActivity extends ListActivity {
             try {
                 Ministry.Event.List query = mService.event().list();
                 query.setLimit(50L);
-                query.setOrder("-last_touch_date_time");
+                query.setOrder("-date,-time");
                 events =  query.execute();
             } catch(java.io.IOException e) {
                 Log.e("Unhindered", "Failed loading " + e);
@@ -108,6 +108,7 @@ public class EventsActivity extends ListActivity {
             super.onPostExecute(result);
             if (result == null) {
                 Log.e("Unhindered", "Failed loading, result is null");
+                return;
             }
 
             EventsArrayAdapter adapter = new EventsArrayAdapter(EventsActivity.this,

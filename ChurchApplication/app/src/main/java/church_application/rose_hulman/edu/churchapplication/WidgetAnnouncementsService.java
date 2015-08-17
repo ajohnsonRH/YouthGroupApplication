@@ -162,6 +162,7 @@ public class WidgetAnnouncementsService extends RemoteViewsService {
             super.onPostExecute(result);
             if (result == null) {
                 Log.e("Unhindered", "Failed loading, result is null");
+                return;
             }
             mFactory.setItems(result.getItems());
         }

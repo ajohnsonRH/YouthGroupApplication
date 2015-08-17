@@ -143,7 +143,7 @@ public class WidgetEventsService extends RemoteViewsService{
             try {
                 Ministry.Event.List query = mService.event().list();
                 query.setLimit(50L);
-                query.setOrder("-last_touch_date_time");
+                query.setOrder("-date,-time");
                 events =  query.execute();
             } catch(java.io.IOException e) {
                 Log.e("Unhindered", "Failed loading " + e);
@@ -164,6 +164,7 @@ public class WidgetEventsService extends RemoteViewsService{
             super.onPostExecute(result);
             if (result == null) {
                 Log.e("Unhindered", "Failed loading, result is null");
+                return;
             }
             mFactory.setItems(result.getItems());
         }

@@ -19,7 +19,7 @@
 package com.appspot.unhindered_student_ministries.ministry.model;
 
 /**
- * Model definition for AnnouncementCollection.
+ * Model definition for DailyVerse.
  *
  * <p> This is the Java data model class that specifies how to parse/serialize into the JSON that is
  * transmitted over HTTP when working with the ministry. For a detailed explanation see:
@@ -29,64 +29,79 @@ package com.appspot.unhindered_student_ministries.ministry.model;
  * @author Google, Inc.
  */
 @SuppressWarnings("javadoc")
-public final class AnnouncementCollection extends com.google.api.client.json.GenericJson {
+public final class DailyVerse extends com.google.api.client.json.GenericJson {
 
   /**
    * The value may be {@code null}.
    */
   @com.google.api.client.util.Key
-  private java.util.List<Announcement> items;
+  private java.lang.String entityKey;
 
-  static {
-    // hack to force ProGuard to consider Announcement used, since otherwise it would be stripped out
-    // see http://code.google.com/p/google-api-java-client/issues/detail?id=528
-    com.google.api.client.util.Data.nullOf(Announcement.class);
-  }
+  /**
+   * The value may be {@code null}.
+   */
+  @com.google.api.client.util.Key("last_touch_date")
+  private java.lang.String lastTouchDate;
 
   /**
    * The value may be {@code null}.
    */
   @com.google.api.client.util.Key
-  private java.lang.String nextPageToken;
+  private java.lang.String verse;
 
   /**
    * @return value or {@code null} for none
    */
-  public java.util.List<Announcement> getItems() {
-    return items;
+  public java.lang.String getEntityKey() {
+    return entityKey;
   }
 
   /**
-   * @param items items or {@code null} for none
+   * @param entityKey entityKey or {@code null} for none
    */
-  public AnnouncementCollection setItems(java.util.List<Announcement> items) {
-    this.items = items;
+  public DailyVerse setEntityKey(java.lang.String entityKey) {
+    this.entityKey = entityKey;
     return this;
   }
 
   /**
    * @return value or {@code null} for none
    */
-  public java.lang.String getNextPageToken() {
-    return nextPageToken;
+  public java.lang.String getLastTouchDate() {
+    return lastTouchDate;
   }
 
   /**
-   * @param nextPageToken nextPageToken or {@code null} for none
+   * @param lastTouchDate lastTouchDate or {@code null} for none
    */
-  public AnnouncementCollection setNextPageToken(java.lang.String nextPageToken) {
-    this.nextPageToken = nextPageToken;
+  public DailyVerse setLastTouchDate(java.lang.String lastTouchDate) {
+    this.lastTouchDate = lastTouchDate;
+    return this;
+  }
+
+  /**
+   * @return value or {@code null} for none
+   */
+  public java.lang.String getVerse() {
+    return verse;
+  }
+
+  /**
+   * @param verse verse or {@code null} for none
+   */
+  public DailyVerse setVerse(java.lang.String verse) {
+    this.verse = verse;
     return this;
   }
 
   @Override
-  public AnnouncementCollection set(String fieldName, Object value) {
-    return (AnnouncementCollection) super.set(fieldName, value);
+  public DailyVerse set(String fieldName, Object value) {
+    return (DailyVerse) super.set(fieldName, value);
   }
 
   @Override
-  public AnnouncementCollection clone() {
-    return (AnnouncementCollection) super.clone();
+  public DailyVerse clone() {
+    return (DailyVerse) super.clone();
   }
 
 }
