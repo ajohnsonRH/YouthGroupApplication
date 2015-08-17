@@ -125,9 +125,10 @@
         <item name="android:dropDownListViewStyle">@style/DropDownListView.Example</item>
 
     </style>
+
     <style name="AppTheme" parent="Theme.Example">
-<!-- All customizations that are NOT specific to a particular API-level can go here. -->
-</style>
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
 </resources>
 
 

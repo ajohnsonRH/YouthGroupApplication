@@ -52,14 +52,15 @@ public final class DailyVerse extends com.google.api.client.json.GenericJson {
   /**
    * @return value or {@code null} for none
    */
+    public DailyVerse(){}
   public java.lang.String getEntityKey() {
     return entityKey;
   }
 
   /**
    * @param entityKey entityKey or {@code null} for none
-   */
-  public DailyVerse setEntityKey(java.lang.String entityKey) {
+   */  public DailyVerse
+ setEntityKey(java.lang.String entityKey) {
     this.entityKey = entityKey;
     return this;
   }
