@@ -8,23 +8,44 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Medium Text"
+        android:text="@string/announcement_title_holder"
         android:id="@+id/announcementTitleTextView"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
+        android:layout_toRightOf="@+id/announcementTitleHeader"
         android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="73dp" />
+        android:layout_marginTop="40dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginRight="20dp"
         android:layout_marginLeft="20dp"
-        android:gravity="center"
-        android:text="New Text"
+        android:text="@string/announcement_description_holder"
         android:id="@+id/announcementDescriptionTextView"
         android:layout_marginTop="22dp"
-        android:layout_below="@+id/announcementTitleTextView"
-        android:layout_centerHorizontal="true" />
+        android:layout_toRightOf="@+id/announcementDescriptionHeader"
+        android:layout_below="@+id/announcementTitleTextView" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/announcement_title_header"
+        android:textStyle="bold"
+        android:id="@+id/announcementTitleHeader"
+        android:layout_alignTop="@+id/announcementTitleTextView"
+        android:layout_alignBottom="@+id/announcementTitleTextView"
+        android:layout_marginLeft="10dp"
+        android:layout_alignParentLeft="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/description_heading"
+        android:textStyle="bold"
+        android:id="@+id/announcementDescriptionHeader"
+        android:layout_alignTop="@+id/announcementDescriptionTextView"
+        android:layout_alignBottom="@+id/announcementDescriptionTextView"
+        android:layout_marginLeft="10dp"
+        android:layout_alignParentLeft="true" />
 </RelativeLayout>

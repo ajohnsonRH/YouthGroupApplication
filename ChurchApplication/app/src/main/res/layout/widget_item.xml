@@ -15,8 +15,7 @@
     android:textStyle="bold"
     android:textColor="@color/black"
     android:requiresFadingEdge="horizontal"
-    android:fadingEdgeLength="100sp"
-    android:inputType="text"/>
+    android:fadingEdgeLength="100sp"/>
 
 <TextView
     android:id="@+id/text2"
@@ -29,8 +28,7 @@
     android:textSize="14sp"
     android:textColor="@color/black"
     android:requiresFadingEdge="horizontal"
-    android:fadingEdgeLength="100sp"
-    android:inputType="text"/>
+    android:fadingEdgeLength="100sp"/>
 
     <ImageButton
         android:layout_width="30dp"
@@ -39,6 +37,7 @@
         android:layout_marginRight="15dp"
         android:src="@drawable/right_arrow"
         android:id="@+id/widgetItemButton"
+        android:contentDescription="@string/widget_button_description"
         android:layout_centerVertical="true"
         android:layout_alignParentRight="true" />
 

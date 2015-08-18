@@ -57,7 +57,6 @@ public class WidgetEventsService extends RemoteViewsService{
         public void onDataSetChanged()
         {
             updateEvents();
-            Log.d("Size", "Size: " + mWidgetItems.size());
         }
 
         @Override
@@ -109,8 +108,8 @@ public class WidgetEventsService extends RemoteViewsService{
         public RemoteViews getLoadingView()
         {
             RemoteViews rv = new RemoteViews(mContext.getPackageName(), R.layout.widget_item);
-            rv.setTextViewText(R.id.text1, "Loading Events");
-            rv.setTextViewText(R.id.text2, "Please Wait");
+            rv.setTextViewText(R.id.text1, getString(R.string.loading_events));
+            rv.setTextViewText(R.id.text2, getString(R.string.please_wait));
             return rv;
         }
 

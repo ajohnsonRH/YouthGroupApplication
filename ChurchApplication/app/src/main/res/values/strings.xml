@@ -30,5 +30,22 @@
     <string name="emailAddressForPastorRyan">pastorforgey@gmail.com</string>
     <string name="change">trying to get the cahnges to push</string>
     <string name="emailAddressForPastorMichelle">pastorforgey@gmail.com</string>
+    <string name="loading_events">Loading Events</string>
+    <string name="please_wait">Please Wait</string>
+    <string name="loading_announcements">Loading Announcements</string>
+    <string name="widget_button_description">Widget Item Button</string>
+    <string name="unhindered">Unhindered Student Ministries</string>
+    <string name="announcements">Announcements</string>
+    <string name="widget_logo_description">Unhindered Logo</string>
+    <string name="title_heading">Title:</string>
+    <string name="event_name_heading">Event:</string>
+    <string name="event_title_holder">event title</string>
+    <string name="event_date_heading">Date:</string>
+    <string name="event_date_holder">event date</string>
+    <string name="event_description_holder">event description</string>
+    <string name="description_heading">Description:</string>
+    <string name="announcement_description_holder">announcement description</string>
+    <string name="announcement_title_holder">announcement title</string>
+    <string name="announcement_title_header">Announcement:</string>
 
 </resources>

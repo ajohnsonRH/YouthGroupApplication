@@ -8,33 +8,68 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Medium Text"
+        android:text="@string/event_title_holder"
         android:id="@+id/eventTitleTextView"
+        android:layout_toRightOf="@+id/eventTitleHeader"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
         android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="73dp" />
+        android:layout_marginTop="40dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Medium Text"
+        android:text="@string/event_date_holder"
         android:id="@+id/eventDateTextView"
+        android:layout_marginLeft="20dp"
         android:layout_marginTop="22dp"
-        android:layout_below="@+id/eventTitleTextView"
-        android:layout_centerHorizontal="true" />
+        android:layout_toRightOf="@+id/eventDateHeader"
+        android:layout_below="@+id/eventTitleTextView" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginRight="20dp"
         android:layout_marginLeft="20dp"
-        android:gravity="center"
-        android:text="New Text"
+        android:text="@string/event_description_holder"
         android:id="@+id/eventDescriptionTextView"
+        android:layout_toRightOf="@+id/eventDescriptionHeader"
         android:layout_marginTop="22dp"
         android:layout_below="@+id/eventDateTextView"
-        android:layout_centerHorizontal="true" />
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/event_name_heading"
+        android:textStyle="bold"
+        android:id="@+id/eventTitleHeader"
+        android:layout_alignTop="@+id/eventTitleTextView"
+        android:layout_alignBottom="@+id/eventTitleTextView"
+        android:layout_marginLeft="10dp"
+        android:layout_alignParentLeft="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/event_date_heading"
+        android:textStyle="bold"
+        android:id="@+id/eventDateHeader"
+        android:layout_alignTop="@+id/eventDateTextView"
+        android:layout_alignBottom="@+id/eventDateTextView"
+        android:layout_marginLeft="10dp"
+        android:layout_alignParentLeft="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/description_heading"
+        android:textStyle="bold"
+        android:id="@+id/eventDescriptionHeader"
+        android:layout_alignTop="@+id/eventDescriptionTextView"
+        android:layout_alignBottom="@+id/eventDescriptionTextView"
+        android:layout_marginLeft="10dp"
+        android:layout_alignParentLeft="true" />
 </RelativeLayout>
