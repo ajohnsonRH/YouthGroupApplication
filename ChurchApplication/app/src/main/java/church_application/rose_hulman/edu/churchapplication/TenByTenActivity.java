@@ -91,16 +91,20 @@ public class TenByTenActivity extends Activity {
                 Log.e("Unhindered", "Failed loading, result is null");
                 return;
             }
-            //TODO UPDATE UI
-            String end = result.toString();
-            ((TextView) findViewById(R.id.scripture_title)).setText(result.toString());
-            AsyncScriptureTask asyncTask = new AsyncScriptureTask(result.toString().replace(" ", "%20"));
+
+            ((TextView) findViewById(R.id.scripture_title)).setText(result.getVerse().toString());
+            AsyncScriptureTask asyncTask = new AsyncScriptureTask(result.getVerse().toString().replace(" ", "%20"));
             asyncTask.execute();
             while (asyncTask.getInput() == null) {
             } //TODO figure out a better way to do this
             parseXMLforDisplay(asyncTask.getInput());
         }
 
+        void parseXMLforDisplay(String input) {
+            input = input.replace("<b>", " ");
+            input = input.replace("</b>", "");
+            textView.setText(input);
+        }
     }
 
 }

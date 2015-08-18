@@ -26,7 +26,5 @@ public class AlarmReciever extends BroadcastReceiver {
                 .setSmallIcon(R.drawable.ic_launcher)
                 .build();
         NotificationManagerCompat.from(context).notify(0, notification);
-
-        Toast.makeText(context, "Alarm Scheduled for Tommrrow", Toast.LENGTH_LONG).show();
     }
 }
