@@ -26,7 +26,7 @@
     <string name="title_activity_ten_by_ten">TenByTenActivity</string>
     <string name="daily_reading_title">Daily Scripture Reading:</string>
     <string name="sync">Sync</string>
-    <string name="daily_reading">\"\"</string>
+    <string name="daily_reading">Loading....</string>
     <string name="emailAddressForPastorRyan">pastorforgey@gmail.com</string>
     <string name="change">trying to get the cahnges to push</string>
     <string name="emailAddressForPastorMichelle">pastorforgey@gmail.com</string>
