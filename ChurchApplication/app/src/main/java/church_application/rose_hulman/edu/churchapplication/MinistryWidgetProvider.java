@@ -34,7 +34,7 @@ public class MinistryWidgetProvider extends AppWidgetProvider{
 
     @Override
     public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds){
-            // Set up the intent that starts the StackViewService, which will
+            // Set up the intent that starts the WidgetAnnouncementsService, which will
             // provide the views for this collection.
             Intent intent1 = new Intent(context, WidgetAnnouncementsService.class);
             // Add the app widget ID to the intent extras.
@@ -42,7 +42,7 @@ public class MinistryWidgetProvider extends AppWidgetProvider{
             intent1.setData(Uri.parse(intent1.toUri(Intent.URI_INTENT_SCHEME)));
             intent1.setAction(AppWidgetManager.ACTION_APPWIDGET_UPDATE);
 
-            // Set up the intent that starts the StackViewService, which will
+            // Set up the intent that starts the WidgetEventsService, which will
             // provide the views for this collection.
             Intent intent2 = new Intent(context, WidgetEventsService.class);
             // Add the app widget ID to the intent extras.
@@ -72,7 +72,6 @@ public class MinistryWidgetProvider extends AppWidgetProvider{
 
             Intent listItemClickIntent = new Intent(context, MinistryWidgetProvider.class);
             listItemClickIntent.setAction(AppWidgetManager.ACTION_APPWIDGET_PICK);
-            //listItemClickIntent.setData(Uri.parse(listItemClickIntent.toUri(Intent.URI_INTENT_SCHEME)));
             PendingIntent clickPendingIntent = PendingIntent.getBroadcast(context, 0, listItemClickIntent, PendingIntent.FLAG_UPDATE_CURRENT);
             rv.setPendingIntentTemplate(R.id.widgetAnnouncementsListView, clickPendingIntent);
             rv.setPendingIntentTemplate(R.id.widgetEventsListView, clickPendingIntent);
